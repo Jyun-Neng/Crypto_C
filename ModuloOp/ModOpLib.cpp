@@ -1,6 +1,6 @@
 /*	The function of ModOpLib.h
 
-	date: 2017/05/02
+	date: 2017/05/27
 */
 #include "ModOpLib.h"
 
@@ -73,6 +73,27 @@ int ModOpLib::Inverse(int a, int modulus)
 	int inverse = ExtendedEuclideanAlgo(modulus, a);
 
 	return inverse;
+}
+
+int ModOpLib::ModExponent(int exp, int modulus, int base)
+{
+	int r, q = exp;
+	int x = 1;
+	int power = base;
+
+	while(q != 0)
+	{
+		r = q % 2;	// base 2 expansion.
+		q  = q / 2;
+
+		// Modular Exponentiation algorithm.
+		if (r == 1)	
+		{
+			x = (x * power) % modulus;
+		}
+		power = (power * power) % modulus;
+	}
+	return x;
 }
 
 

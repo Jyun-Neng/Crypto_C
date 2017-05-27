@@ -24,5 +24,9 @@ int main(int argc, char const *argv[])
 	}
 	printf("\n");
 
+	int modexp = mod -> ModExponent(644, 645, 3);
+
+	printf("%d\n", modexp);
+
 	return 0;
 }

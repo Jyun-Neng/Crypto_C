@@ -2,7 +2,7 @@
 	which include:
 		congruence, modular inverse, modular expoentiation, gcd...
 
-	date: 2017/05/24
+	date: 2017/05/27
 */
 #ifndef MOD_OP_LIB_H
 #define MOD_OP_LIB_H
@@ -14,5 +14,6 @@ public:
 	int *FindCongruence(int int1, int modulus, int numbers);	// Find the congruence of integer a.
 	int GCD(int int1, int int2);	// Find the greatest common integer.	
 	int Inverse(int int1, int modulus);	// Find the modular inverse.
+	int ModExponent(int exp, int modulus, int base);	// Do modulo exponetial operation.
 };
 #endif
