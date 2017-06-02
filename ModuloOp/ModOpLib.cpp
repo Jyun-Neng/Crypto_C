@@ -78,8 +78,8 @@ int ModOpLib::Inverse(int a, int modulus)
 int ModOpLib::ModExponent(int exp, int modulus, int base)
 {
 	int r, q = exp;
-	int x = 1;
-	int power = base;
+	unsigned long int x = 1;
+	unsigned long int power = base;
 
 	while(q != 0)
 	{
