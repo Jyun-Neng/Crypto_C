@@ -96,5 +96,14 @@ int ModOpLib::ModExponent(int exp, int modulus, int base)
 	return x;
 }
 
+int ModOpLib::ICRTnode(int x1, int x2, int p1, int p2)
+{
+	int inv_p2 = ExtendedEuclideanAlgo(p1, p2);	// inv_p2 * p2 = 1 (mod p1)
+	int N = (inv_p2 * (x1 - x2)) % p1;
+	N = (N < 0) ? N + p1 : N;	
+	return (x2 + N * p2);	// it mod p2 = x2
+							// it mod p1 = x1
+}
+
 
 
